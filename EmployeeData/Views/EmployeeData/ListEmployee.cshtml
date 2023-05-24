@@ -1,0 +1,143 @@
+﻿@model IEnumerable<EmployeeDAL.Employee>
+
+@{
+    ViewBag.Title = "ListEmployee";
+}
+
+<h2>List Of all employees</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+ <div class="div1"> <a href="@Url.Action("ExportToExcel", "EmployeeData")" class="export"><b>Export to Excel</b></a></div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionId)
+            @Html.DisplayNameFor(model => model.Region.RegionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZoneId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Technology)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region.RegionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zone.ZoneName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Technology)
+            </td>
+            <td>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#docModal_@item.EmpId">View Doc</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@foreach (var employee in Model)
+{
+    <div class="modal fade" id="docModal_@employee.EmpId" tabindex="-1" role="dialog" aria-labelledby="docModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="docModalLabel">Employee Documents</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    @if (employee.EmpDocuments.Any())
+                    {
+                        <ul>
+                            @foreach (var doc in employee.EmpDocuments)
+                            {
+                                <li>
+                                    @doc.DocName  <a href="@Url.Action("DownloadDoc", "EmployeeData", new { docId = doc.DocId })">Download</a>
+                                                            </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No documents found.</p>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        
+        $(".div1").css("text-align","right",);
+    });
+</script>

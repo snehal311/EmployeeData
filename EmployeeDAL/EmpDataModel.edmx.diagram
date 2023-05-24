@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68d2cd12236f4f1b8a72b58ffeeb7a8f" Name="Diagram1">
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.Branch" Width="1.5" PointX="5.25" PointY="8.875" />
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.EmpDocument" Width="1.5" PointX="9.75" PointY="6.375" />
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.Employee" Width="1.5" PointX="7.5" PointY="5.375" />
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.Region" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.Zone" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="EmployeeDetailDBModel.Zone_copy" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK__Employees__Branc__656C112C" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK_Branch_Zone" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK__EmpDocume__EmpId__0A9D95DB" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK_Region" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK_Zone" />
+        <AssociationConnector Association="EmployeeDetailDBModel.FK__zone__RegionId__06CD04F7" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

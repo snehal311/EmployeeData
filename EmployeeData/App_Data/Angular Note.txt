@@ -1,0 +1,17 @@
+"@angular/flex-layout": "^6.0.0-beta.18",
+
+****Angular components overview
+$.Components are the main building block for Angular applications. Each component consists of:
+$.An HTML template that declares what renders on the page
+$.A TypeScript class that defines behavior
+$.A CSS selector that defines how the component is used in a template
+$.Optionally, CSS styles applied to the template
+
+**Component Lifecycle
+$.A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views
+
+***Control states of Form field
+1).pristine:  true if field/form has no beed changed
+2).dirty : reverse of .pristine
+3).valid :true if form/whole form is valid 
+4).invalid : reverse of valid

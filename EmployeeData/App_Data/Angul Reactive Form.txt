@@ -1,0 +1,25 @@
+Template Driven Form:
+- Template driven form we are using template variables declares with #<variablename>=ngForm or ngModel
+- these variables helpp us to track the state of the form like valid,dirty,invalid
+***Control states of Form field
+1).pristine:  true if field/form has no beed changed
+2).dirty : reverse of .pristine
+3).valid :true if form/whole form is valid 
+4).invalid : reverse of valid
+- to disable the submit button when form data is invalid use variable in below way:
+<button mat-button type="submit" [disabled]="loginForm.form.invalid">
+
+
+ANGULAR REACTVE FORM
+
+- Create a tree of angular form control object in the component class
+- Bind them to the native form control elements in the template
+- Componenet class has immediate access to both data model and the form control structure
+  - push data model values to form controls and pull user changed values back
+
+- values and validity updates are always synchronous 
+- easier to unit test
+
+REACTIVE FORM CLASSES
+
+- FormControl : powers individual form control

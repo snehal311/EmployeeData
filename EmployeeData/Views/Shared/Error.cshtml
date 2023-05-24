@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <style>
+        .form{
+            font-size:medium;
+        }
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <hgroup>
+        <h1>Error.</h1>
+        <h2>An error occurred while processing your request.</h2>
+        <h3 class="error">@TempData["Message"]</h3>
+    </hgroup>
+    <b>@Html.ActionLink("Go back to Form", "Create", "EmployeeData",new {@class="form btn-primary"})</b>
+</body>
+</html>
